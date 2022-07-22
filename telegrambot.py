@@ -52,10 +52,10 @@ def ethgas(update, context):
     soup = bs4.BeautifulSoup(url.text,"lxml")
 
     # Element Data
-    gas_var = soup.select("div>span>a")
+    gas_var = soup.select("div>span>span>a")
 
     # Print Eth Gas
-    update.message.reply_text(f'Ethereum Gas is Currently: {gas_var[5].getText()}')
+    update.message.reply_text(f'Ethereum Gas is Currently: {gas_var[0].getText()}')
 
 # Fear / Greed Index Command
 def feargreed(update, context):
